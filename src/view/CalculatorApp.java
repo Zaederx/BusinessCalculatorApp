@@ -1,5 +1,7 @@
 package view;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +15,10 @@ import javafx.stage.Stage;
  */
 public class CalculatorApp extends Application {
 
+	/**
+	 * An overridden method from the application class.
+	 * Used to 
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -24,10 +30,24 @@ public class CalculatorApp extends Application {
 		primaryStage.show();
 	}
 	
+	/**
+	 * The main method of the application.
+	 * The place from which the arguments are launched
+	 * @param args - arguments of the main method (other methods)
+	 */
 	public static void main (String [] args) {
 		launch(args);
 	}
 
-	
+	/**
+	 * Loads the scene where Present Value may be worked out.
+	 * This scene takes user input parameters in order
+	 * to then work out the present value of assets.
+	 */
+	public void loadPV (Stage primaryStage) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/view/CalculatorPV.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
 	
 }
