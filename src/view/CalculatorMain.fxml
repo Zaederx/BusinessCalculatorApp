@@ -12,7 +12,7 @@
    <top>
       <HBox fx:id="hboxTop" alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView>
+            <ImageView smooth="false">
                <image>
                   <Image url="@../resources/iconmonstr-coin-10-96%20PURPLE.png" />
                </image>
@@ -22,12 +22,12 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView>
+            <ImageView smooth="false">
                <image>
                   <Image url="@../resources/iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView>
+            <ImageView smooth="false">
                <image>
                   <Image url="@../resources/iconmonstr-chart-6-64%20GREY.png" />
                </image>
