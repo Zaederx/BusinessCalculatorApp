@@ -15,6 +15,7 @@ import javafx.stage.Stage;
  */
 public class CalculatorApp extends Application {
 
+	static Stage primaryStage = new Stage();
 	/**
 	 * An overridden method from the application class.
 	 * Used to 
@@ -22,16 +23,16 @@ public class CalculatorApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		primaryStage.setTitle("Calculator App");
-		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorMain.fxml"));
+		CalculatorApp.primaryStage.setTitle("Calculator App");
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CalculatorMain.fxml"));
 		Scene scene = new Scene(root, 726, 480);
-		primaryStage.setWidth(726);
-		primaryStage.setHeight(480);
-		primaryStage.setMinWidth(400);
-		primaryStage.setMinHeight(370);
+		CalculatorApp.primaryStage.setWidth(726);
+		CalculatorApp.primaryStage.setHeight(480);
+		CalculatorApp.primaryStage.setMinWidth(400);
+		CalculatorApp.primaryStage.setMinHeight(370);
 		
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		CalculatorApp.primaryStage.setScene(scene);
+		CalculatorApp.primaryStage.show();
 	}
 	
 	/**
@@ -48,8 +49,8 @@ public class CalculatorApp extends Application {
 	 * This scene takes user input parameters in order
 	 * to then work out the present value of assets.
 	 */
-	public void loadPV (Stage primaryStage) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorPV.fxml"));
+	public static void loadPV () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/PV.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
@@ -58,10 +59,17 @@ public class CalculatorApp extends Application {
 	 * This scene takes user input parameters in order
 	 * to then work out the present value of assets.
 	 */
-	public void loadFV (Stage primaryStage) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorFV.fxml"));
+	public static void loadFV () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/FV.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
 	
+	/**
+	 * Get Primary Stage.
+	 * used to access the primary stage from other classes
+	 */
+	public Stage getPS() {
+		return CalculatorApp.primaryStage;
+	}
 }

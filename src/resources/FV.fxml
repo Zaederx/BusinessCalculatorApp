@@ -35,7 +35,7 @@
          </children></HBox>
    </top>
    <left>
-      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" style="-fx-background-color: ;" BorderPane.alignment="CENTER">
+      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
          </children></VBox>

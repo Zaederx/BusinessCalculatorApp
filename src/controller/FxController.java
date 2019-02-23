@@ -1,15 +1,20 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import view.CalculatorApp;
 
 public class FxController {
-
+	
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
 
@@ -43,16 +48,36 @@ public class FxController {
     @FXML
     private TextField textFieldInterest;
 
+    /**
+     * An instance of the class value.
+     * Used to work out present and future value
+     */
     Value value = new Value();
   
-    public double getPV() {
-    	if (textFieldFV.getText().isEmpty()) {/*do something*/} // should show warning message (int textfield???) that will disappear when you enter new data
+    /**
+     * Submit inout from user to controller.
+     * Then changes text to doubles and worksas out the present value.
+     * @return double presentValue
+     */
+    @FXML
+    public double submitPV() {
+    	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty");} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");}
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");}
     	double futureValue = Double.parseDouble(textFieldFV.getText());
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
     	double n = Double.parseDouble(textFieldYears.getText());
     	return	value.workOutPv(futureValue, interestRate, n);
     }
 
+    /**
+     * Changes scene to Present Value Scene.
+     * @throws IOException
+     */
+    @FXML
+    public void pvImageViewClicked () throws IOException {
+    	CalculatorApp.loadPV();
+    }
     
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
