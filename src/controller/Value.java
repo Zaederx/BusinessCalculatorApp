@@ -8,47 +8,23 @@ package controller;
 
 public class Value {
 
-/**
- * pv = present value
- * 
- */
- double pv = 0.0;
+
+	 /**
+	  * Present Value = Future Value/ (1+Interest_Rate)N
+	  */
+	
+	public double workOutPv(double futureValue, double interestRate, double n) {
+	 double pv = Math.pow(futureValue/(1+interestRate), n);
+	 return pv;
+ }
  
- /**
-  * fv = future value
-  */
- double fv = 0.0;
+	/**
+	 * Future Value = Amount Invested * (1+Interest_Rate)N
+	 */
 
-/* returns pv
- * @return double pv = present value
- */
-public double getPv() {
-	return pv;
-}
-
-/**
- * sets the value of pv.
- * @param pv
- */
-public void setPv(double pv) {
-	this.pv = pv;
-}
-
-/**
- * returns the value of pv.
- * @return int fv - future value
- */
-public double getFv() {
+	public double workOutFv(double amountInvested, double interestRate, double n) {
+	double fv = Math.pow(amountInvested/(1+interestRate), n);
 	return fv;
 }
 
-/**
- * sets the value of fv.
- * @param fv - future value
- */
-public void setFv(double fv) {
-	this.fv = fv;
-}
- 
- 
 }

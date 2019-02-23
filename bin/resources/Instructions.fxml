@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="726.0" style="-fx-background-color: #eaece5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FxController">
+   <top>
+      <HBox fx:id="hboxTop" alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #e6e2d3;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView id="money" fx:id="moneyImageView">
+               <image>
+                  <Image url="@iconmonstr-coin-10-96%20PURPLE.png" />
+               </image>
+            </ImageView>
+            <Separator orientation="VERTICAL" prefHeight="96.0" prefWidth="0.0">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Separator>
+            <ImageView fx:id="pvImageView">
+               <image>
+                  <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
+               </image>
+            </ImageView>
+            <ImageView>
+               <image>
+                  <Image url="@iconmonstr-chart-6-64%20GREY.png" />
+               </image>
+            </ImageView>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="167.0" style="-fx-background-color: ;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Label prefHeight="23.0" prefWidth="95.0" style="-fx-background-color: #e6e2d3;" text="About" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label prefHeight="34.0" prefWidth="161.0" style="-fx-background-color: #e6e2d3;" text="Instructions" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children></VBox>
+   </left>
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </opaqueInsets>
+   <center>
+      <VBox prefHeight="274.0" prefWidth="561.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="38.0" prefWidth="244.0" text="About the Financial Calculator App" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Financial Calculator App is a handy tool to help you work our some of the important business ratios needed to keep your company or personal acconting book a float." wrappingWidth="353.94464111328125" />
+            <HBox fx:id="hboxButtonKey" alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="500.0">
+               <children>
+                  <ImageView fx:id="pvImageView1">
+                     <image>
+                        <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This first symbol represents the Present Value." wrappingWidth="98.2060546875" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@iconmonstr-chart-6-64%20GREY.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This second symbol represents the future value" wrappingWidth="98.2060546875" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

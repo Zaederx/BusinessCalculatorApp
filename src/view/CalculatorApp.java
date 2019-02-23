@@ -23,8 +23,12 @@ public class CalculatorApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 		primaryStage.setTitle("Calculator App");
-		Parent root = FXMLLoader.load(getClass().getResource("/view/CalculatorMain.fxml"));
-		Scene scene = new Scene(root, 600, 400);
+		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorMain.fxml"));
+		Scene scene = new Scene(root, 726, 480);
+		primaryStage.setWidth(726);
+		primaryStage.setHeight(480);
+		primaryStage.setMinWidth(400);
+		primaryStage.setMinHeight(370);
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -45,7 +49,17 @@ public class CalculatorApp extends Application {
 	 * to then work out the present value of assets.
 	 */
 	public void loadPV (Stage primaryStage) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/view/CalculatorPV.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorPV.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
+	/**
+	 * Loads the scene where Present Value may be worked out.
+	 * This scene takes user input parameters in order
+	 * to then work out the present value of assets.
+	 */
+	public void loadFV (Stage primaryStage) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/resources/CalculatorFV.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="726.0" style="-fx-background-color: #eaece5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FxController">
+   <top>
+      <HBox fx:id="hboxTop" alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #e6e2d3;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView id="money" fx:id="moneyImageView">
+               <image>
+                  <Image url="@iconmonstr-coin-10-96%20GREY.png" />
+               </image>
+            </ImageView>
+            <Separator orientation="VERTICAL" prefHeight="96.0" prefWidth="0.0">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Separator>
+            <ImageView fx:id="pvImageView">
+               <image>
+                  <Image url="@iconmonstr-flip-chart-7-64-PURPLE.png" />
+               </image>
+            </ImageView>
+            <ImageView>
+               <image>
+                  <Image url="@iconmonstr-chart-6-64%20GREY.png" />
+               </image>
+            </ImageView>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" style="-fx-background-color: ;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefHeight="5.0" prefWidth="98.0" />
+         </children></VBox>
+   </left>
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </opaqueInsets>
+   <center>
+      <VBox>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="45.0" prefWidth="421.0" text="Future Value ">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Present Value">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ....:">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </VBox>
+                  <VBox prefHeight="274.0" prefWidth="138.0">
+                     <children>
+                        <Label>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...: ">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="274.0" prefWidth="138.0">
+                     <children>
+                        <Label>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...: ">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="274.0" prefWidth="138.0">
+                     <children>
+                        <Label>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...:">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
