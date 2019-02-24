@@ -27,7 +27,7 @@
                   <Image url="@../resources/iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView>
+            <ImageView fx:id="fvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@../resources/iconmonstr-chart-6-64%20GREY.png" />
                </image>

@@ -33,6 +33,9 @@ public class FxController {
     @FXML // fx:id="pvImageView"
     private ImageView pvImageView; // Value injected by FXMLLoader
 
+    @FXML // fx:id="fvImageView"
+    private ImageView fvImageView; // Value injected by FXMLLoader
+    
     @FXML // fx:id="hboxButtonKey"
     private HBox hboxButtonKey; // Value injected by FXMLLoader
 
@@ -47,6 +50,9 @@ public class FxController {
 
     @FXML
     private TextField textFieldInterest;
+    
+    @FXML
+    private TextField textFieldAmountInvested;
 
     /**
      * An instance of the class value.
@@ -77,6 +83,26 @@ public class FxController {
     	}
     	return 0.0;
     }
+    
+    
+    @FXML
+    public double submitFV() {
+    	boolean valid = true; // turns false when textFields are empty
+    	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); valid = false;}
+    	
+    	if (valid) { 
+    	double futureValue = Double.parseDouble(textFieldAmountInvested.getText());
+    	double interestRate = Double.parseDouble(textFieldInterest.getText());
+    	double n = Double.parseDouble(textFieldYears.getText());
+    	double fv = value.workOutPv(futureValue, interestRate, n);
+    	
+    	System.out.println("Future Value: "+ textFieldAmountInvested + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + fv);
+    	return	fv;
+    	}
+    	return 0.0;
+    }
 
     /**
      * Changes scene to Present Value Scene.
@@ -85,6 +111,15 @@ public class FxController {
     @FXML
     public void pvImageViewClicked () throws IOException {
     	CalculatorApp.loadPV();
+    }
+    
+    /**
+     * Changes scene to Future Value Scene.
+     * @throws IOException
+     */
+    @FXML
+    public void fvImageViewClicked () throws IOException {
+    	CalculatorApp.loadFV();
     }
     
     @FXML // This method is called by the FXMLLoader when initialization is complete

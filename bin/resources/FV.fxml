@@ -64,12 +64,12 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ....:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Amount Invested:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldFV" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldAmountInvested" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -86,7 +86,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...: ">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Interest: ">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -105,7 +105,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...: ">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Years : ">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -124,16 +124,6 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the ...:">
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </TextField>
                      </children>
                   </VBox>
                </children>
