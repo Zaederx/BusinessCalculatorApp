@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import view.CalculatorApp;
 
 public class FxController {
@@ -53,6 +52,9 @@ public class FxController {
     
     @FXML
     private TextField textFieldAmountInvested;
+    
+    @FXML
+    private Label labelResult;
 
     /**
      * An instance of the class value.
@@ -78,6 +80,8 @@ public class FxController {
     	double n = Double.parseDouble(textFieldYears.getText());
     	double pv = value.workOutPv(futureValue, interestRate, n);
     	
+    	result(pv);
+    
     	System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
     	return	pv;
     	}
@@ -97,7 +101,7 @@ public class FxController {
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
     	double n = Double.parseDouble(textFieldYears.getText());
     	double fv = value.workOutPv(futureValue, interestRate, n);
-    	
+    	result(fv);
     	System.out.println("Future Value: "+ textFieldAmountInvested + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + fv);
     	return	fv;
     	}
@@ -122,6 +126,12 @@ public class FxController {
     	CalculatorApp.loadFV();
     }
     
+    @FXML
+    public void result(double result) {
+    	String resultString = ":"+result;
+    	labelResult.setText(resultString);
+    }
+    
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert moneyImageView != null : "fx:id=\"moneyImageView\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
@@ -130,6 +140,15 @@ public class FxController {
         assert pvImageView != null : "fx:id=\"pvImageView\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
         assert hboxButtonKey != null : "fx:id=\"hboxButtonKey\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
         assert hboxLeft != null : "fx:id=\"hboxLeft\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
+      
+            
+	    assert textFieldFV != null : "fx:id=\"textFieldFV\" was not injected: check your FXML file 'PV.fxml'.";
+	    assert textFieldYears != null : "fx:id=\"textFieldYears\" was not injected: check your FXML file 'PV.fxml'.";
+	    assert labelResult != null : "fx:id=\"labelResult\" was not injected: check your FXML file 'PV.fxml'.";
+	    assert textFieldInterest != null : "fx:id=\"textFieldInterest\" was not injected: check your FXML file 'PV.fxml'.";
+            
+
+        
 
     }
 }

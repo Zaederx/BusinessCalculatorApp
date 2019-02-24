@@ -24,12 +24,12 @@
             </Separator>
             <ImageView fx:id="pvImageView">
                <image>
-                  <Image url="@iconmonstr-flip-chart-7-64-PURPLE.png" />
+                  <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
             <ImageView fx:id="textFieldFV" onMouseClicked="#fvImageViewClicked">
                <image>
-                  <Image url="@iconmonstr-chart-6-64%20GREY.png" />
+                  <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
                </image>
             </ImageView>
          </children></HBox>
@@ -48,7 +48,12 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="45.0" prefWidth="421.0" text="Future Value ">
+                  <Label prefHeight="45.0" prefWidth="230.0" text="Future Value ">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelResult" prefHeight="45.0" prefWidth="230.0">
                      <font>
                         <Font size="36.0" />
                      </font>
