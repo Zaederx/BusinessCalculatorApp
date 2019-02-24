@@ -57,17 +57,25 @@ public class FxController {
     /**
      * Submit inout from user to controller.
      * Then changes text to doubles and worksas out the present value.
-     * @return double presentValue
+     * @return double presentValue (or zero if no valid input)
      */
     @FXML
     public double submitPV() {
-    	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty");} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");}
-    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");}
+    	boolean valid = true; // turns false when textFields are empty
+    	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); valid = false;}
+    	
+    	if (valid) { 
     	double futureValue = Double.parseDouble(textFieldFV.getText());
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
     	double n = Double.parseDouble(textFieldYears.getText());
-    	return	value.workOutPv(futureValue, interestRate, n);
+    	double pv = value.workOutPv(futureValue, interestRate, n);
+    	
+    	System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
+    	return	pv;
+    	}
+    	return 0.0;
     }
 
     /**

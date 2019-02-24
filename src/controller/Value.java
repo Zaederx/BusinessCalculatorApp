@@ -14,7 +14,7 @@ public class Value {
 	  */
 	
 	public double workOutPv(double futureValue, double interestRate, double n) {
-	 double pv = Math.pow(futureValue/(1+interestRate), n);
+	 double pv = futureValue/Math.pow((1+interestRate), n);
 	 return pv;
  }
  
@@ -23,7 +23,7 @@ public class Value {
 	 */
 
 	public double workOutFv(double amountInvested, double interestRate, double n) {
-	double fv = Math.pow(amountInvested/(1+interestRate), n);
+	double fv = amountInvested*Math.pow((1+interestRate), n);
 	return fv;
 }
 
