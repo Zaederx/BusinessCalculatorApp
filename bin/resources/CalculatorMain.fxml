@@ -27,9 +27,14 @@
                   <Image url="@../resources/iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="fvImageView" onMouseClicked="#pvImageViewClicked">
+            <ImageView fx:id="fvImageView" onMouseClicked="#fvImageViewClicked">
                <image>
                   <Image url="@../resources/iconmonstr-chart-6-64%20GREY.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ratiosImageView" onMouseClicked="#ratiosImageViewClicked">
+               <image>
+                  <Image url="@iconmonstr-ruler-27-64.png" />
                </image>
             </ImageView>
          </children></HBox>
@@ -69,16 +74,22 @@
                      </image>
                   </ImageView>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This first symbol represents the Present Value." wrappingWidth="98.2060546875" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
                   <ImageView>
                      <image>
                         <Image url="@../resources/iconmonstr-chart-6-64%20GREY.png" />
                      </image>
                   </ImageView>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This second symbol represents the future value" wrappingWidth="98.2060546875" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@iconmonstr-ruler-27-64.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This third symbol is for the financial ratios" wrappingWidth="98.2060546875" />
                </children>
             </HBox>
          </children>

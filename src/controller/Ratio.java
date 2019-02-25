@@ -25,7 +25,7 @@ public class Ratio {
 	 * @param currentLiabilities - all the liabilities you presently have
 	 * @return double workingCaptialRatio - the result of cA - cL
 	 */
-	public double workingCaptialRatio(double currentAsset, double currentLiabilities) {
+	public static double workingCaptialRatio(double currentAsset, double currentLiabilities) {
 		double workingCapitalRatio = currentAsset - currentLiabilities;
 		return workingCapitalRatio;
 	}
@@ -36,7 +36,7 @@ public class Ratio {
 	 * @param totalEquity
 	 * @return double debtEquity - a solvency ratio (shows ability to meet long term obligations)
 	 */
-	public double debtEquityRatio(double totalDebt, double totalEquity) {
+	public static double debtEquityRatio(double totalDebt, double totalEquity) {
 		double debtEquity = totalDebt/totalEquity;
 		return debtEquity;
 	}
@@ -44,7 +44,7 @@ public class Ratio {
 	/**
 	 * Used to work out the Gross Profit Margin
 	 * @param grossProfit - overall profit 
-	 * @param revenue - all income 
+	 * @param revenue - all income
 	 * @return double grossProfitMarginRatio - the 
 	 */
 	public double grossProfitMarginRatio(double grossProfit, double revenue) {

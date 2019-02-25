@@ -32,6 +32,11 @@
                   <Image url="@iconmonstr-chart-6-64%20GREY.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="ratiosImageView" onMouseClicked="#ratiosImageViewClicked">
+               <image>
+                  <Image url="@iconmonstr-ruler-27-64.png" />
+               </image>
+            </ImageView>
          </children></HBox>
    </top>
    <left>
@@ -140,6 +145,7 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#submitPV" text="SUBMIT" />
-         </children></HBox>
+         </children>
+      </HBox>
    </bottom>
 </BorderPane>

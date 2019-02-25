@@ -32,6 +32,11 @@
                   <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="ratiosImageView" onMouseClicked="#ratiosImageViewClicked">
+               <image>
+                  <Image url="@iconmonstr-ruler-27-64.png" />
+               </image>
+            </ImageView>
          </children></HBox>
    </top>
    <left>

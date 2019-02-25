@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import view.CalculatorApp;
+import controller.Ratio;
 
 public class FxController {
 	
@@ -55,6 +56,16 @@ public class FxController {
     
     @FXML
     private Label labelResult;
+    
+    @FXML
+    private ImageView ratiosImageView;
+    
+    @FXML
+    private TextField textFieldTotalDebt;
+    
+    @FXML 
+    private TextField textFieldtextTotalEquity;
+    
 
     /**
      * An instance of the class value.
@@ -80,7 +91,7 @@ public class FxController {
     	double n = Double.parseDouble(textFieldYears.getText());
     	double pv = value.workOutPv(futureValue, interestRate, n);
     	
-    	result(pv);
+    	displayResult(pv);
     
     	System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
     	return	pv;
@@ -101,13 +112,32 @@ public class FxController {
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
     	double n = Double.parseDouble(textFieldYears.getText());
     	double fv = value.workOutPv(futureValue, interestRate, n);
-    	result(fv);
+    	displayResult(fv);
     	System.out.println("Future Value: "+ textFieldAmountInvested + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + fv);
     	return	fv;
     	}
     	return 0.0;
     }
 
+    @FXML
+    public double submitDebtEquityRatios() {
+    	boolean valid = true; // turns false when textFields are empty
+    	if (textFieldTotalDebt.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldtextTotalEquity.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
+    	
+    	
+    	if (valid) { 
+    	double totalDebt = Double.parseDouble(textFieldTotalDebt.getText());
+    	double totalEquity = Double.parseDouble(textFieldtextTotalEquity.getText());
+    	
+    	double debtEquity = Ratio.debtEquityRatio(totalDebt, totalEquity);
+    	displayResult(debtEquity);
+    	System.out.println("Total Debt:"+ totalDebt + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquity);
+    	return	debtEquity;
+    	}
+    	return 0.0;
+    }
+    
     /**
      * Changes scene to Present Value Scene.
      * @throws IOException
@@ -126,6 +156,11 @@ public class FxController {
     	CalculatorApp.loadFV();
     }
     
+    @FXML
+    public void ratiosImageViewClicked () throws IOException {
+    	CalculatorApp.loadRatios();
+    }
+    
     /**
      * Changes the view back to the main
      * @throws IOException
@@ -134,12 +169,14 @@ public class FxController {
     public void moneyImageViewClicked() throws IOException {
     	CalculatorApp.loadMain();
     }
+    
+   
     /**
      * Set the text of the PV OR FV label to the result work out fomr their respective functions
      * @param result
      */
     @FXML
-    public void result(double result) {
+    public void displayResult(double result) {
     	String resultString = ":"+result;
     	labelResult.setText(resultString);
     }

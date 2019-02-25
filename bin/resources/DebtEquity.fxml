@@ -22,19 +22,19 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
+            <ImageView fx:id="pvImageView">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="fvmageView" onMouseClicked="#fvImageViewClicked">
+            <ImageView fx:id="fvImageView" onMouseClicked="#fvImageViewClicked">
                <image>
-                  <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
+                  <Image url="@iconmonstr-chart-6-64%20GREY.png" />
                </image>
             </ImageView>
             <ImageView fx:id="ratiosImageView" onMouseClicked="#ratiosImageViewClicked">
                <image>
-                  <Image url="@iconmonstr-ruler-27-64.png" />
+                  <Image url="@iconmonstr-ruler-27-64-2.png" />
                </image>
             </ImageView>
          </children></HBox>
@@ -43,6 +43,10 @@
       <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
          </children></VBox>
    </left>
    <opaqueInsets>
@@ -53,12 +57,12 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="45.0" prefWidth="230.0" text="Future Value ">
+                  <Label prefHeight="45.0" prefWidth="300.0" text="Debt/Equity Ratio">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelResult" prefHeight="45.0" prefWidth="230.0">
+                  <Label fx:id="labelResult" prefHeight="45.0" prefWidth="261.0">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -69,17 +73,17 @@
                <children>
                   <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Present Value">
+                        <Label text="Total liabilities:">
                            <padding>
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Amount Invested:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Debt:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldAmountInvested" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldLiabilities" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -96,12 +100,12 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Interest: ">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Liabilities:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldInterest" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldShareholderEquity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -115,16 +119,11 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Years : ">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldYears" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </TextField>
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">
@@ -142,6 +141,9 @@
       </VBox>
    </center>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#submitPV" text="SUBMIT" />
+         </children></HBox>
    </bottom>
 </BorderPane>

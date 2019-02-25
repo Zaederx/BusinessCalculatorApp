@@ -71,6 +71,12 @@ public class CalculatorApp extends Application {
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
+	
+	public static void loadRatios () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/DebtEquity.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
 	/**
 	 * Get Primary Stage.
 	 * used to access the primary stage from other classes
