@@ -70,11 +70,46 @@ public class FxController {
 
     @FXML
     private Button subButtonDebtEquityClicked;
+    
+    @FXML
+    private TextField textFieldCurrentAsset;
+    
+    @FXML
+    private TextField textFieldCurrentLiabilities;
+    
+    @FXML
+    private TextField textErrorAmountInvested;
+    
+    
+    
+    @FXML
+    private Label labelErrorFV;
+    
+    @FXML
+    private Label labelErrorInterest;
+    
+    @FXML
+    private Label labelErrorYears;
+    
+    
+    
+//    @FXML
+//    private Label error1;
+//    
+//    @FXML
+//    private Label error2;
+//    
+//    @FXML
+//    private Label error3;
+//    
+    
     /**
      * An instance of the class value.
      * Used to work out present and future value
      */
     Value value = new Value();
+
+	
   
     /**
      * Submit inout from user to controller.
@@ -84,33 +119,84 @@ public class FxController {
     @FXML
     public double submitPV() {
     	boolean valid = true; // turns false when textFields are empty
-    	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
-    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); valid = false;}
+    	double futureValue = 0;
+    	double interestRate = 0;
+    	double n = 0;
+    	double pv = 0.0;
+    	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); labelErrorFV.setVisible(true); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
     	
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); labelErrorInterest.setVisible(true); valid = false;}
+    	
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); labelErrorYears.setVisible(true); valid = false;}
+ 
     	if (valid) { 
-    	double futureValue = Double.parseDouble(textFieldFV.getText());
-    	double interestRate = Double.parseDouble(textFieldInterest.getText());
-    	double n = Double.parseDouble(textFieldYears.getText());
-    	double pv = value.workOutPv(futureValue, interestRate, n);
+    		labelErrorFV.setVisible(false);
+    		labelErrorInterest.setVisible(false);
+    		labelErrorYears.setVisible(false);
     	
+    		try {
+    	futureValue = Double.parseDouble(textFieldFV.getText());
+    		}
+    		catch (Exception e) {
+    		labelErrorFV.setVisible(true);
+    		valid = false;
+    		}
+    		try {
+    	interestRate = Double.parseDouble(textFieldInterest.getText());
+    		}
+    		catch (Exception e) {
+    		labelErrorInterest.setVisible(true);
+    		valid = false;
+    		}
+    		try {
+    			n = Double.parseDouble(textFieldYears.getText());
+    		}
+    		catch (Exception e) {
+    		labelErrorYears.setVisible(true);
+    		valid = false;
+    		}
+    	
+    	if(valid) {
+    	pv = value.workOutPv(futureValue, interestRate, n);
     	displayResult(pv);
-    
     	System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
+    	}
+    	
+    
+    	
     	return	pv;
     	}
     	return 0.0;
     }
     
-    
+    /**
+     * 
+     * @return double fv - future value (or 0.0 if no valid input is given)
+     */
     @FXML
     public double submitFV() {
     	boolean valid = true; // turns false when textFields are empty
+    	try {
     	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
-    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); valid = false;}
+    	}
+    	catch (Exception e) {
     	
+    	}
+    	try {
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");  valid = false;}
+    	}
+    	catch (Exception e) {
+    	
+    	}
+    	try {
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");  valid = false;}
+    	}
+    	catch (Exception e) {
+    		
+    	}
     	if (valid) { 
+    		
+    		
     	double futureValue = Double.parseDouble(textFieldAmountInvested.getText());
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
     	double n = Double.parseDouble(textFieldYears.getText());
@@ -141,6 +227,18 @@ public class FxController {
     	return 0.0;
     }
     
+    public double submitWorkingCapital () {
+    	boolean valid = true;
+    	if (textFieldCurrentAsset.getText().isEmpty()) {/*do something*/ System.out.println("textFieldCurrentAsset is empty");  valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldCurrentLiabilities.getText().isEmpty()) {/*do something*/ System.out.println("textFieldCurrentLiabilities is empty");  valid = false;}
+    	if (valid) {
+    	double currentAsset = Double.parseDouble(textFieldCurrentAsset.getText());
+    	double currentLiabilities = Double.parseDouble(textFieldCurrentLiabilities.getText());
+    	double workingCapital = Ratio.workingCaptialRatio(currentAsset, currentLiabilities);
+    	return workingCapital;
+    	}
+    	return 0.0;
+    }
     /**
      * Changes scene to Present Value Scene.
      * @throws IOException
@@ -151,7 +249,7 @@ public class FxController {
     }
     
     /**
-     * Changes scene to Future Value Scene.
+     * Changes scene to Future Value (FV.fxml) Scene.
      * @throws IOException
      */
     @FXML
@@ -159,9 +257,13 @@ public class FxController {
     	CalculatorApp.loadFV();
     }
     
+    /**
+     * Loads the CurrentRatio.fxml scene
+     * @throws IOException
+     */
     @FXML
     public void ratiosImageViewClicked () throws IOException {
-    	CalculatorApp.loadRatios();
+    	CalculatorApp.loadCurrentRatio();
     }
     
     /**
@@ -173,7 +275,21 @@ public class FxController {
     	CalculatorApp.loadMain();
     }
     
+    public void workingCapitalClicked() throws IOException {
+    	CalculatorApp.loadCapitalWork();
+    }
+    
+    public void debtEquityClicked() throws IOException {
+    	CalculatorApp.loadDebtEquity();
+    }
+    
+    public void currentRatioClicked() throws IOException {
+    	CalculatorApp.loadCurrentRatio();
+    }
    
+    public void grossProfitClicked() throws IOException {
+    	CalculatorApp.loadGrossProfit();
+    }
     /**
      * Set the text of the PV OR FV label to the result work out fomr their respective functions
      * @param result

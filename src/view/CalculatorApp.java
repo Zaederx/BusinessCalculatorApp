@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -30,7 +31,7 @@ public class CalculatorApp extends Application {
 		CalculatorApp.primaryStage.setHeight(480);
 		CalculatorApp.primaryStage.setMinWidth(400);
 		CalculatorApp.primaryStage.setMinHeight(370);
-		
+		//CalculatorApp.primaryStage.initModality(Modality.APPLICATION_MODAL);
 		CalculatorApp.primaryStage.setScene(scene);
 		CalculatorApp.primaryStage.show();
 	}
@@ -65,15 +66,41 @@ public class CalculatorApp extends Application {
 		primaryStage.setScene(scene);
 	}
 	
-	
+	/**
+	 * Loads Main scene - fomr which the about section is visible
+	 * @throws IOException
+	 */
 	public static void loadMain () throws IOException {
 		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CalculatorMain.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
 	
-	public static void loadRatios () throws IOException {
+	/**
+	 * Loads the Current Ratio Scene (CurrentRatio.fxml).
+	 * From this scene you can work out the current ratio
+	 * @throws IOException
+	 */
+	public static void loadCurrentRatio () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CurrentRatio.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
+	
+	public static void loadDebtEquity () throws IOException {
 		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/DebtEquity.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
+	
+	public static void loadCapitalWork () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CapitalWork.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
+	
+	public static void loadGrossProfit () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/GrossProfit.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}

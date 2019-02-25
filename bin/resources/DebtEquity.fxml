@@ -43,10 +43,13 @@
       <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#currentRatioClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#workingCapitalClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #6b32a6;" text="Debt Equity" textAlignment="CENTER" textFill="#e3e3e3" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label onMouseClicked="#grossProfitClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
          </children></VBox>
    </left>
    <opaqueInsets>

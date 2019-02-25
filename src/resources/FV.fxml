@@ -84,6 +84,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
+                        <Text fx:id="textErrorAmountInvested" fill="#640000" strokeType="OUTSIDE" strokeWidth="0.0" text="Please only enter a decimal." visible="false" />
                      </children>
                      <BorderPane.margin>
                         <Insets />
@@ -106,6 +107,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
+                        <Text fx:id="textErrorInterest" fill="#640000" strokeType="OUTSIDE" strokeWidth="0.0" text="Please only enter a decimal." visible="false" />
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">
@@ -125,6 +127,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
+                        <Text fx:id="textErrorYears" fill="#640000" strokeType="OUTSIDE" strokeWidth="0.0" text="Please only enter a decimal." visible="false" />
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">
