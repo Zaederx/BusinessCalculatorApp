@@ -12,7 +12,7 @@
    <top>
       <HBox fx:id="hboxTop" alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView id="money" fx:id="moneyImageView">
+            <ImageView id="money" fx:id="moneyImageView" onMouseClicked="#moneyImageViewClicked">
                <image>
                   <Image url="@iconmonstr-coin-10-96%20GREY.png" />
                </image>

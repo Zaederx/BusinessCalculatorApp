@@ -126,6 +126,15 @@ public class FxController {
     	CalculatorApp.loadFV();
     }
     
+    /**
+     * Changes the view back to the main
+     * @throws IOException
+     */
+    @FXML
+    public void moneyImageViewClicked() throws IOException {
+    	CalculatorApp.loadMain();
+    }
+    
     @FXML
     public void result(double result) {
     	String resultString = ":"+result;

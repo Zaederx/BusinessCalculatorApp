@@ -12,7 +12,7 @@
    <top>
       <HBox fx:id="hboxTop" alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView id="money" fx:id="moneyImageView">
+            <ImageView id="money" fx:id="moneyImageView" onMouseClicked="#moneyImageViewClicked">
                <image>
                   <Image url="@iconmonstr-coin-10-96%20GREY.png" />
                </image>
@@ -48,7 +48,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="45.0" prefWidth="261.0" text="Present Value ">
+                  <Label prefHeight="45.0" prefWidth="246.0" text="Present Value ">
                      <font>
                         <Font size="36.0" />
                      </font>

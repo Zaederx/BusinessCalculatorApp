@@ -65,6 +65,12 @@ public class CalculatorApp extends Application {
 		primaryStage.setScene(scene);
 	}
 	
+	
+	public static void loadMain () throws IOException {
+		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CalculatorMain.fxml"));
+		Scene scene = new Scene (root, 600, 400);
+		primaryStage.setScene(scene);
+	}
 	/**
 	 * Get Primary Stage.
 	 * used to access the primary stage from other classes
