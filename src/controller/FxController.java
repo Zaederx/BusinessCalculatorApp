@@ -134,7 +134,10 @@ public class FxController {
     public void moneyImageViewClicked() throws IOException {
     	CalculatorApp.loadMain();
     }
-    
+    /**
+     * Set the text of the PV OR FV label to the result work out fomr their respective functions
+     * @param result
+     */
     @FXML
     public void result(double result) {
     	String resultString = ":"+result;

@@ -22,12 +22,12 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView">
+            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="textFieldFV" onMouseClicked="#fvImageViewClicked">
+            <ImageView fx:id="fvmageView" onMouseClicked="#fvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
                </image>
