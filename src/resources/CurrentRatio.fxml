@@ -22,7 +22,7 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
+            <ImageView fx:id="pvImageView">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
@@ -43,10 +43,10 @@
       <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true" />
             <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
          </children></VBox>
    </left>
    <opaqueInsets>
@@ -57,7 +57,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="45.0" prefWidth="267.0" text="Financial Ratios">
+                  <Label prefHeight="45.0" prefWidth="300.0" text="Debt/Equity Ratio">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -73,17 +73,17 @@
                <children>
                   <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Current Ratio">
+                        <Label text="Total liabilities:">
                            <padding>
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Future Value:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Debt:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldFV" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldTotalDebt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -100,12 +100,12 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Interest: ">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Liabilities:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldInterest" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldTotalEquity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -119,16 +119,11 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the number of years">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldYears" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </TextField>
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">
@@ -148,7 +143,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#submitPV" text="SUBMIT" />
+            <Button fx:id="subButtonDebtEquity" mnemonicParsing="false" onAction="#submitDebtEquityRatios" text="SUBMIT" />
          </children></HBox>
    </bottom>
 </BorderPane>
