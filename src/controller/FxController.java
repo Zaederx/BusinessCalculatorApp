@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -64,9 +65,11 @@ public class FxController {
     private TextField textFieldTotalDebt;
     
     @FXML 
-    private TextField textFieldtextTotalEquity;
+    private TextField textFieldTotalEquity;
     
 
+    @FXML
+    private Button subButtonDebtEquityClicked;
     /**
      * An instance of the class value.
      * Used to work out present and future value
@@ -122,13 +125,13 @@ public class FxController {
     @FXML
     public double submitDebtEquityRatios() {
     	boolean valid = true; // turns false when textFields are empty
-    	if (textFieldTotalDebt.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldtextTotalEquity.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); valid = false;}
+    	if (textFieldTotalDebt.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalDebt is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldTotalEquity.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalEquity is empty"); valid = false;}
     	
     	
     	if (valid) { 
     	double totalDebt = Double.parseDouble(textFieldTotalDebt.getText());
-    	double totalEquity = Double.parseDouble(textFieldtextTotalEquity.getText());
+    	double totalEquity = Double.parseDouble(textFieldTotalEquity.getText());
     	
     	double debtEquity = Ratio.debtEquityRatio(totalDebt, totalEquity);
     	displayResult(debtEquity);
