@@ -91,6 +91,9 @@ public class FxController {
     @FXML
     private Label labelErrorYears;
     
+    @FXML
+    private Label labelErrorAmountInvested;
+    
     
     
 //    @FXML
@@ -123,43 +126,46 @@ public class FxController {
     	double interestRate = 0;
     	double n = 0;
     	double pv = 0.0;
+    	
+    	//check if text fields are empty - if they are empty - they are not valid (valid = false)
     	if (textFieldFV.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); labelErrorFV.setVisible(true); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
     	
     	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty"); labelErrorInterest.setVisible(true); valid = false;}
     	
     	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty"); labelErrorYears.setVisible(true); valid = false;}
  
+    	//check if they are valid (whether they contain text)
     	if (valid) { 
-    		labelErrorFV.setVisible(false);
+    		labelErrorFV.setVisible(false);//if valid - no longer display error label
     		labelErrorInterest.setVisible(false);
     		labelErrorYears.setVisible(false);
     	
     		try {
-    	futureValue = Double.parseDouble(textFieldFV.getText());
+    			futureValue = Double.parseDouble(textFieldFV.getText());
     		}
     		catch (Exception e) {
     		labelErrorFV.setVisible(true);
     		valid = false;
     		}
     		try {
-    	interestRate = Double.parseDouble(textFieldInterest.getText());
+    			interestRate = Double.parseDouble(textFieldInterest.getText());
     		}
     		catch (Exception e) {
-    		labelErrorInterest.setVisible(true);
-    		valid = false;
+    			labelErrorInterest.setVisible(true);
+    			valid = false;
     		}
     		try {
     			n = Double.parseDouble(textFieldYears.getText());
     		}
     		catch (Exception e) {
-    		labelErrorYears.setVisible(true);
-    		valid = false;
+    			labelErrorYears.setVisible(true);
+    			valid = false;
     		}
     	
     	if(valid) {
-    	pv = value.workOutPv(futureValue, interestRate, n);
-    	displayResult(pv);
-    	System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
+    		pv = value.workOutPv(futureValue, interestRate, n);
+    		displayResult(pv);
+    		System.out.println("Future Value: "+futureValue + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + pv);
     	}
     	
     
@@ -176,26 +182,15 @@ public class FxController {
     @FXML
     public double submitFV() {
     	boolean valid = true; // turns false when textFields are empty
-    	try {
+    	
     	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	}
-    	catch (Exception e) {
-    	
-    	}
-    	try {
     	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");  valid = false;}
-    	}
-    	catch (Exception e) {
-    	
-    	}
-    	try {
     	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");  valid = false;}
-    	}
-    	catch (Exception e) {
-    		
-    	}
+    	
     	if (valid) { 
-    		
+    		labelErrorAmountInvested.setVisible(false);
+    		labelErrorInterest.setVisible(false);
+    		labelErrorYears.setVisible(false);
     		
     	double futureValue = Double.parseDouble(textFieldAmountInvested.getText());
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
