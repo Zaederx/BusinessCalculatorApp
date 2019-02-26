@@ -191,6 +191,10 @@ public class FxController {
     		labelErrorAmountInvested.setVisible(false);
     		labelErrorInterest.setVisible(false);
     		labelErrorYears.setVisible(false);
+//    		todo ...
+//    		- synchronise variable names 
+//    		- add fxml injectable variables to suit
+//    		- followed the muster of the submit pv method ()also for conformity purposes
     		
     	double futureValue = Double.parseDouble(textFieldAmountInvested.getText());
     	double interestRate = Double.parseDouble(textFieldInterest.getText());
