@@ -104,6 +104,11 @@ public class FxController {
     @FXML
     private Label labelErrorTotalEquity;
     
+    @FXML
+    private Label labelErrorCurrentAsset;
+    
+    @FXML
+    private Label labelErrorCurrentLiabilities;
     
     
 //    @FXML
@@ -280,9 +285,44 @@ public class FxController {
     	return 0.0;
     }
     
+    
+    public double submitCurrentRatio () {
+    	boolean valid = true; // turns false when textFields are empty
+    	if (textFieldCurrentAsset.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalDebt is empty"); valid = false; labelErrorCurrentAsset.setVisible(true);} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldCurrentLiabilities.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalEquity is empty"); valid = false; labelErrorCurrentLiabilities.setVisible(true);}
+    	double totalDebt = 0.0;
+    	double totalEquity = 0.0;
+    	double debtEquityRatio = 0.0;
+    	
+    	if (valid) { 
+    		//make validation error message disappear when..
+    		//...input is valid 
+    		labelErrorCurrentAsset.setVisible(false); 
+    		labelErrorCurrentLiabilities.setVisible(false);
+    		try {
+	    	totalDebt = Double.parseDouble(textFieldTotalDebt.getText());
+    		}
+    		catch (Exception e) {
+    			labelErrorTotalDebt.setVisible(true);
+    		}
+    		try {
+    			totalEquity = Double.parseDouble(textFieldTotalEquity.getText());
+    		}
+    		catch (Exception e) {
+    			labelErrorTotalEquity.setVisible(true);
+    		}
+    		
+	    	debtEquityRatio = Ratio.debtEquityRatio(totalDebt, totalEquity);
+	    	displayResult(debtEquityRatio);
+	    	System.out.println("Total Debt:"+ totalDebt + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquityRatio);
+	    	return	debtEquityRatio;
+    	}
+    	return 0.0;
+    }
+    
     public double submitWorkingCapital () {
     	boolean valid = true;
-    	if (textFieldCurrentAsset.getText().isEmpty()) {/*do something*/ System.out.println("textFieldCurrentAsset is empty");  valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldCurrentAsset.getText().isEmpty()) {/*do something*/ System.out.println("textFieldCurrentAsset is empty");  valid = false; } // should show warning message (int textfield???) that will disappear when you enter new data
     	if (textFieldCurrentLiabilities.getText().isEmpty()) {/*do something*/ System.out.println("textFieldCurrentLiabilities is empty");  valid = false;}
     	if (valid) {
     	double currentAsset = Double.parseDouble(textFieldCurrentAsset.getText());
