@@ -101,6 +101,9 @@ public class FxController {
     @FXML
     private Label labelErrorTotalLiabilities;
     
+    @FXML
+    private Label labelErrorTotalEquity;
+    
     
     
 //    @FXML
@@ -245,20 +248,34 @@ public class FxController {
     }
 
     @FXML
-    public double submitDebtEquityRatios() {
+    public double submitDebtEquityRatio() {
     	boolean valid = true; // turns false when textFields are empty
-    	if (textFieldTotalDebt.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalDebt is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldTotalEquity.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalEquity is empty"); valid = false;}
-    	
+    	if (textFieldTotalDebt.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalDebt is empty"); valid = false; labelErrorTotalDebt.setVisible(true);} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldTotalEquity.getText().isEmpty()) {/*do something*/ System.out.println("textFieldTotalEquity is empty"); valid = false; labelErrorTotalEquity.setVisible(true);}
+    	double totalDebt = 0.0;
+    	double totalEquity = 0.0;
+    	double debtEquityRatio = 0.0;
     	
     	if (valid) { 
-    	double totalDebt = Double.parseDouble(textFieldTotalDebt.getText());
-    	double totalEquity = Double.parseDouble(textFieldTotalEquity.getText());
-    	
-    	double debtEquity = Ratio.debtEquityRatio(totalDebt, totalEquity);
-    	displayResult(debtEquity);
-    	System.out.println("Total Debt:"+ totalDebt + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquity);
-    	return	debtEquity;
+    		labelErrorTotalDebt.setVisible(false);
+    		labelErrorTotalEquity.setVisible(false);
+    		try {
+	    	totalDebt = Double.parseDouble(textFieldTotalDebt.getText());
+    		}
+    		catch (Exception e) {
+    			labelErrorTotalDebt.setVisible(true);
+    		}
+    		try {
+    			totalEquity = Double.parseDouble(textFieldTotalEquity.getText());
+    		}
+    		catch (Exception e) {
+    			labelErrorTotalEquity.setVisible(true);
+    		}
+    		
+	    	debtEquityRatio = Ratio.debtEquityRatio(totalDebt, totalEquity);
+	    	displayResult(debtEquityRatio);
+	    	System.out.println("Total Debt:"+ totalDebt + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquityRatio);
+	    	return	debtEquityRatio;
     	}
     	return 0.0;
     }
