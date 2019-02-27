@@ -87,18 +87,33 @@ public class CalculatorApp extends Application {
 		primaryStage.setScene(scene);
 	}
 	
+	/**
+	 * Loads the Debt Equity Scene.
+	 * From this scene you can work out Debt Equity
+	 * @throws IOException
+	 */
 	public static void loadDebtEquity () throws IOException {
 		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/DebtEquity.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
 	
+	/**
+	 * Loads the Capital Work Scene.
+	 * From this scene you can work out 
+	 * @throws IOException
+	 */
 	public static void loadCapitalWork () throws IOException {
 		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/CapitalWork.fxml"));
 		Scene scene = new Scene (root, 600, 400);
 		primaryStage.setScene(scene);
 	}
 	
+	/**
+	 * Loads the Gross Profit Scene.
+	 * From this scene you can calculate Gross Profit
+	 * @throws IOException
+	 */
 	public static void loadGrossProfit () throws IOException {
 		Parent root = FXMLLoader.load(CalculatorApp.class.getResource("/resources/GrossProfit.fxml"));
 		Scene scene = new Scene (root, 600, 400);
