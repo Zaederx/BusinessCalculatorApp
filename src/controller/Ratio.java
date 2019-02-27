@@ -41,10 +41,6 @@ public class Ratio {
 		return debtEquity;
 	}
 	
-	public static double grossProfit () {
-		return 0.0;
-	}
-	
 	/**
 	 * Used to work out the Gross Profit Margin
 	 * @param grossProfit - overall profit 

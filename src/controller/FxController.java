@@ -94,6 +94,12 @@ public class FxController {
     @FXML
     private Label labelErrorAmountInvested;
     
+    @FXML
+    private Label labelErrorTotalDebt;
+    
+    @FXML
+    private Label labelErrorTotalLiabilities;
+    
     
     
 //    @FXML
@@ -182,7 +188,10 @@ public class FxController {
     @FXML
     public double submitFV() {
     	boolean valid = true; // turns false when textFields are empty
-    	
+    	double futureValue = 0.0;
+    	double interestRate = 0.0;
+    	double n = 0.0;
+    	double fv = 0.0;
     	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
     	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");  valid = false;}
     	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");  valid = false;}
@@ -196,10 +205,32 @@ public class FxController {
 //    		- add fxml injectable variables to suit
 //    		- followed the muster of the submit pv method ()also for conformity purposes
     		
-    	double futureValue = Double.parseDouble(textFieldAmountInvested.getText());
-    	double interestRate = Double.parseDouble(textFieldInterest.getText());
-    	double n = Double.parseDouble(textFieldYears.getText());
-    	double fv = value.workOutPv(futureValue, interestRate, n);
+    		try {
+    	futureValue = Double.parseDouble(textFieldAmountInvested.getText());
+    		}
+    		catch(Exception e) {
+    			System.out.println("The submitFV textFieldAmountiNVESTEDfAILE");
+    		}
+    		
+    		try {
+    	interestRate = Double.parseDouble(textFieldInterest.getText());
+    		}
+    		catch (Exception e) {
+    			System.out.println("The submitFV Interest - try catch  failed ");
+    		}
+    		try {
+    	n = Double.parseDouble(textFieldYears.getText());
+    		}
+    		catch (Exception e) {
+    			System.out.println("the submitFV - textFieldYears try catch failed");
+    			e.printStackTrace();
+    		}
+    	try {
+    	fv = value.workOutPv(futureValue, interestRate, n);
+    	}
+    	catch (Exception e) {
+    		
+    	}
     	displayResult(fv);
     	System.out.println("Future Value: "+ textFieldAmountInvested + " Interest Rate: "+ interestRate + " Years: " + n + "\nPresent Value: " + fv);
     	return	fv;
@@ -238,6 +269,12 @@ public class FxController {
     	}
     	return 0.0;
     }
+    
+    
+    public double submitDebtGrossProfit() {
+    	return 0.0;
+    }
+    
     /**
      * Changes scene to Present Value Scene.
      * @throws IOException

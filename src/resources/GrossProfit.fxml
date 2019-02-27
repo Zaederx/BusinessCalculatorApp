@@ -23,7 +23,7 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView">
+            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
@@ -88,17 +88,16 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Debt:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Gross Profit:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldTotalDebt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldGrossProfit" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <Text fx:id="textFieldError" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Debt:" />
                      </children>
                      <BorderPane.margin>
                         <Insets />
@@ -111,12 +110,12 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Liabilities:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldTotalEquity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldlRevenue" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -154,7 +153,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="subButtonDebtEquity" mnemonicParsing="false" onAction="#submitDebtEquityRatios" text="SUBMIT" />
+            <Button fx:id="subButtonGrossProfit" mnemonicParsing="false" onAction="#submitDebtGrossProfit" text="SUBMIT" />
          </children></HBox>
    </bottom>
 </BorderPane>
