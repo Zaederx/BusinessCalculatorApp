@@ -1,4 +1,4 @@
-package controller;
+package model;
 /**
  * A class used to work out the present and future value
  * of a given amount over time.

@@ -11,8 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import model.Ratio;
+import model.Value;
 import view.CalculatorApp;
-import controller.Ratio;
 
 public class FxController {
 	
@@ -192,9 +193,9 @@ public class FxController {
     	double interestRate = 0.0;
     	double n = 0.0;
     	double fv = 0.0;
-    	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false;} // should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");  valid = false;}
-    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");  valid = false;}
+    	if (textFieldAmountInvested.getText().isEmpty()) {/*do something*/ System.out.println("textFieldFV is empty"); valid = false; labelErrorAmountInvested.setVisible(true);} // should show warning message (int textfield???) that will disappear when you enter new data
+    	if (textFieldInterest.getText().isEmpty()) {/*do something*/ System.out.println("textFieldInterest is empty");  valid = false; labelErrorInterest.setVisible(true);}
+    	if (textFieldYears.getText().isEmpty()) {/*do something*/System.out.println("textFieldYears is empty");  valid = false; labelErrorYears.setVisible(true);}
     	
     	if (valid) { 
     		labelErrorAmountInvested.setVisible(false);
@@ -206,27 +207,32 @@ public class FxController {
 //    		- followed the muster of the submit pv method ()also for conformity purposes
     		
     		try {
-    	futureValue = Double.parseDouble(textFieldAmountInvested.getText());
+    			futureValue = Double.parseDouble(textFieldAmountInvested.getText());
+    			
     		}
     		catch(Exception e) {
+    			labelErrorAmountInvested.setVisible(true);
     			System.out.println("The submitFV textFieldAmountiNVESTEDfAILE");
     		}
     		
     		try {
-    	interestRate = Double.parseDouble(textFieldInterest.getText());
+    			interestRate = Double.parseDouble(textFieldInterest.getText());
     		}
     		catch (Exception e) {
+    			labelErrorInterest.setVisible(true);
     			System.out.println("The submitFV Interest - try catch  failed ");
     		}
     		try {
-    	n = Double.parseDouble(textFieldYears.getText());
+    			
+    			n = Double.parseDouble(textFieldYears.getText());
     		}
     		catch (Exception e) {
+    			labelErrorYears.setVisible(true);
     			System.out.println("the submitFV - textFieldYears try catch failed");
-    			e.printStackTrace();
+    			
     		}
     	try {
-    	fv = value.workOutPv(futureValue, interestRate, n);
+    			fv = value.workOutPv(futureValue, interestRate, n);
     	}
     	catch (Exception e) {
     		
@@ -344,15 +350,12 @@ public class FxController {
         assert pvImageView != null : "fx:id=\"pvImageView\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
         assert hboxButtonKey != null : "fx:id=\"hboxButtonKey\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
         assert hboxLeft != null : "fx:id=\"hboxLeft\" was not injected: check your FXML file 'CalculatorMain.fxml'.";
-      
-            
+  
 	    assert textFieldFV != null : "fx:id=\"textFieldFV\" was not injected: check your FXML file 'PV.fxml'.";
 	    assert textFieldYears != null : "fx:id=\"textFieldYears\" was not injected: check your FXML file 'PV.fxml'.";
 	    assert labelResult != null : "fx:id=\"labelResult\" was not injected: check your FXML file 'PV.fxml'.";
 	    assert textFieldInterest != null : "fx:id=\"textFieldInterest\" was not injected: check your FXML file 'PV.fxml'.";
-            
-
-        
+  
 
     }
 }

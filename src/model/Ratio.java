@@ -1,4 +1,4 @@
-package controller;
+package model;
 /**
  * This class will be used to provide the ratio and formulas
  * business logic that wil be needed to run the 

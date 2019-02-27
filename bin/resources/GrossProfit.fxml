@@ -23,7 +23,7 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView">
+            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
