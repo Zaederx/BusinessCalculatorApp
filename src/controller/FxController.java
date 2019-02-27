@@ -77,8 +77,8 @@ public class FxController {
     @FXML
     private TextField textFieldCurrentLiabilities;
     
-    @FXML
-    private TextField textErrorAmountInvested;
+//    @FXML
+//    private TextField textErrorAmountInvested;
     
     
     

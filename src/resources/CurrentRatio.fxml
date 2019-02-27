@@ -23,7 +23,7 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView">
+            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
@@ -55,8 +55,8 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
-            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseDragged="#debtEquityClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#grossProfitClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
          </children></VBox>
    </left>
    <opaqueInsets>

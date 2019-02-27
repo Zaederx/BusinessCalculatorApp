@@ -27,7 +27,7 @@
                   <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="fvmageView" onMouseClicked="#fvImageViewClicked">
+            <ImageView fx:id="fvmageView">
                <image>
                   <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
                </image>
