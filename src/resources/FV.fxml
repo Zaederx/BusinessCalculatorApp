@@ -79,7 +79,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldAmountInvested" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textField1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -102,7 +102,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldInterest" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textField2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -122,7 +122,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldYears" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textField3" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

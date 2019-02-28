@@ -10,7 +10,7 @@ public class Values extends Calculation {
 		 * @param n	- number of years
 		 * @return
 		 */
-		public static double performCalc(double ...vars) {
+		public double performCalc(double ...vars) {
 			double fv = vars[0];
 			double rate = vars[1];
 			double n = vars[2];
@@ -19,7 +19,7 @@ public class Values extends Calculation {
 		/**
 		 * Present Value = Future Value/ (1+Interest_Rate)N
 		 */
-		public static double workOutPV(double futureValue, double interestRate, double n) {
+		public double workOutPV(double futureValue, double interestRate, double n) {
 		 double pv = futureValue/Math.pow((1+interestRate), n);
 		 System.out.println("futureValue:"+ futureValue + " interestRate: "+ interestRate + "\nYears: " + n+"\nPresentValue: " + pv);
 		 return pv;
@@ -34,7 +34,7 @@ public class Values extends Calculation {
 		 * and n (the number of year) vars[3]
 		 * @return
 		 */
-		public static double performCalc(double ...vars) {
+		public double performCalc(double ...vars) {
 			double amount = vars[0];
 			double rate = vars[1];
 			double n = vars[2];
@@ -44,7 +44,7 @@ public class Values extends Calculation {
 		 * Future Value = Amount Invested * (1+Interest_Rate)N
 		 */
 	
-		public static double workOutFV(double amountInvested, double interestRate, double n) {
+		public double workOutFV(double amountInvested, double interestRate, double n) {
 		double fv = amountInvested*Math.pow((1+interestRate), n);
 		System.out.println("amountInvested"+ amountInvested + " interestRate: "+ interestRate + "\nYears: " + n + "FutureValue: "+fv);
 		return fv;

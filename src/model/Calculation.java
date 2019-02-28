@@ -9,7 +9,7 @@ package model;
 public class Calculation {
 
 	
-	public static double performCalc(double ...doubles) {
+	public double performCalc(double ...doubles) {
 		return 0.0;
 	}
 
