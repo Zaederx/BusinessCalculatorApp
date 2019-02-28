@@ -17,11 +17,16 @@ import model.Ratios.CurrentRatio;
 import model.Ratios.DebtEquityRatio;
 import model.Ratios.GrossProfitMarginRatio;
 import model.Ratios.WorkingCapitalRatio;
-import model.Value.PresentValue;
-import model.Value.FutureValue;
+import model.Values.PresentValue;
+import model.Values.FutureValue;
 import model.Calculation;
 import view.CalculatorApp;
 
+/**
+ * The FxController Class - used to handler events from fxml scenes
+ * @author zacharyishmael
+ *
+ */
 public class FxController {
 	
     @FXML // ResourceBundle that was given to the FXMLLoader
@@ -74,50 +79,70 @@ public class FxController {
     @FXML
     private Label labelError3;
     
-    
-    Label [] labelErrors;
+    Label [] labelErrors;//needed for submit function
    
-    
-    /**
-     * An instance of the class value.
-     * Used to work out present and future value
-     */
-    Calculation value = new Calculation();
-
 	private Label labelResult;
-    
+	
+	/**
+	 * submit function applied to Future Value.
+	 * @return
+	 */
     public double submitFV () {
     	Calculation futureValue = new FutureValue();
     	return submit(futureValue, textField1,textField2,textField3);
     }
+    
+    /**
+	 * submit function applied to Present Value.
+	 * @return
+	 */
     public double submitPV () {
     	Calculation presentValue = new PresentValue();
     	return submit(presentValue, textField1,textField2,textField3 );
     }
+    
+    /**
+	 * submit function applied to CurrentRatio
+	 * @return
+	 */
     public double submitCurrentRatio () {
     	Calculation currentRatio = new CurrentRatio();
     	return submit(currentRatio, textField1,textField2);
     }
+    
+    /**
+	 * submit function applied to Working Capital
+	 * @return
+	 */
     public double submitWorkingCapital () {
     	Calculation workingCapital = new WorkingCapitalRatio();
     	return submit(workingCapital, textField1,textField2);
     }
     
+    /**
+	 * submit function applied to Debt Equity
+	 * @return
+	 */
     public double submitDebtEquity () {
     	Calculation debtEquity = new DebtEquityRatio();
     	return submit(debtEquity, textField1,textField2);
     }
     
+    /**
+	 * submit function applied to Gross Profit
+	 * @return
+	 */
     public double submitGrossProfit () {
     	Calculation grossProfit = new GrossProfitMarginRatio();
     	return submit(grossProfit, textField1,textField2);
     }
     /**
-     * A more generic submit function.
-     * A allows the code to be less dense than first approach - more heavily OOP this time
+     * A more generic submit function - a basis all other submitFunctions.
+     * It allows the code to be less dense than first approach - more heavily OOP this time
      * ...makes it also easier to extend functionality later on
      * as submit will just need the field and not a whole new function 
      * each time.
+     * @param calculation
      * @param textFields
      * @return not needed, but there if ever reqiured (e.g for persistence)
      */

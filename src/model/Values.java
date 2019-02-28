@@ -1,8 +1,8 @@
 package model;
 
-public class Value extends Calculation {
+public class Values extends Calculation {
 	
-	public static class PresentValue extends Value{
+	public static class PresentValue extends Values{
 	
 		public static double performCalc(double d1, double d2, double n) {
 			return workOutPV(d1,d2,n);
@@ -16,7 +16,7 @@ public class Value extends Calculation {
 		}
 	}
 	
-	public static class FutureValue extends Value {
+	public static class FutureValue extends Values {
 		
 		public static double performCalc(double d1, double d2,double n) {
 			return workOutFV(d1,d2,n);
