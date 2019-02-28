@@ -96,30 +96,30 @@ public class FxController {
     }
     public double submitCurrentRatio () {
     	Calculation currentRatio = new CurrentRatio();
-    	return submit(currentRatio, textField1,textField2,textField3 );
+    	return submit(currentRatio, textField1,textField2);
     }
     public double submitWorkingCapital () {
     	Calculation workingCapital = new WorkingCapitalRatio();
-    	return submit(workingCapital, textField1,textField2,textField3 );
+    	return submit(workingCapital, textField1,textField2);
     }
     
     public double submitDebtEquity () {
     	Calculation debtEquity = new DebtEquityRatio();
-    	return submit(debtEquity, textField1,textField2,textField3 );
+    	return submit(debtEquity, textField1,textField2);
     }
     
     public double submitGrossProfit () {
     	Calculation grossProfit = new GrossProfitMarginRatio();
-    	return submit(grossProfit, textField1,textField2,textField3 );
+    	return submit(grossProfit, textField1,textField2);
     }
     /**
      * A more generic submit function.
-     * A allows the code to be less dense
+     * A allows the code to be less dense than first approach - more heavily OOP this time
      * ...makes it also easier to extend functionality later on
      * as submit will just need the field and not a whole new function 
      * each time.
      * @param textFields
-     * @return
+     * @return not needed, but there if ever reqiured (e.g for persistence)
      */
     public double submit(Calculation calculation , TextField ...textFields) {
     	double result = 0.0;
