@@ -329,40 +329,45 @@ public class FxController {
      * @return
      */
     public double submit(Calculation calculation , TextField ...textFields) {
+    	double result = 0.0;
+    	boolean valid = true;
     	int errorLabelNum = 0;
-    	double totalDebt = 0.0;
+    	double [] vars = new double [textFields.length];
     	double totalEquity = 0.0;
     	double debtEquityRatio = 0.0;
-    	int valCount = 0;
+    	int textCount = 0;
     	//for loop checks each field so see if it has valid input
     	//error labels appear if text is not valid
     	//checks one textField at a time and decides if valid or not
     	for (TextField  textField: textFields ){
     	// turns false when textFields are empty - needs to stay in the loop
-    	boolean valid = true; 
+    	boolean hasText = true; 
     	// should show warning message (int textfield???) that will disappear when you enter new data
-    	if (textField.getText().isEmpty()) {/*do something*/ System.out.println(textField.getId()+" is empty"); valid = false; labelErrors[errorLabelNum].setVisible(true); }
-    	if (valid) { 
-    		valCount++;
-    		//make validation error message disappear when..
-    		//...input is valid 
+    	if (textField.getText().isEmpty()) {/*do something*/ System.out.println(textField.getId()+" is empty"); hasText = false; labelErrors[errorLabelNum].setVisible(true);}
+    	
+    	//make validation error message disappear when..
+		//...input is valid 
+    	if (hasText) { 
+    		textCount++;
+    		//hides error message (if it has been already visible)
     		labelErrors[errorLabelNum].setVisible(false);
     		try {
-	    	totalDebt = Double.parseDouble(textField.getText());
+	    	vars[errorLabelNum] = Double.parseDouble(textField.getText());
     		}
     		catch (Exception e) {
+    			valid = false;
     			labelErrors[errorLabelNum].setVisible(true);
     		}
     	}
     	//incerement errorNum in prep to set next error message visible
-    	//if box has error
     	errorLabelNum++;
     	}//end of for loop
     	//if all textFields are valid - calculate
-    	if (valCount == errorLabelNum) {
-    	debtEquityRatio = calculation.performCalc(totalDebt, totalEquity);
+    	System.out.println("valCount="+textCount + "  errorLabelNum= " + errorLabelNum);
+    	if (valid && (textCount == errorLabelNum)) {//if all three have text && are valid doubles (numbers) proceede
+    	result = calculation.performCalc(vars);
     	displayResult(debtEquityRatio);
-    	System.out.println("Total Debt:"+ totalDebt + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquityRatio);
+    	System.out.println("Total Debt:"+ result + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquityRatio);
     	}
     	return	debtEquityRatio;
     }
