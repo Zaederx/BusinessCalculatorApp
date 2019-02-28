@@ -81,6 +81,7 @@ public class FxController {
     
     Label [] labelErrors;//needed for submit function
    
+    @FXML
 	private Label labelResult;
 	
 	/**
@@ -151,9 +152,8 @@ public class FxController {
     	boolean valid = true;
     	int errorLabelNum = 0;
     	double [] vars = new double [textFields.length];
-    	double totalEquity = 0.0;
-    	double debtEquityRatio = 0.0;
-    	int textCount = 0;
+    	int textCount = 0; 
+    	int valCount = 0;
     	//for loop checks each field so see if it has valid input
     	//error labels appear if text is not valid
     	//checks one textField at a time and decides if valid or not
@@ -171,9 +171,9 @@ public class FxController {
     		labelErrors[errorLabelNum].setVisible(false);
     		try {
 	    	vars[errorLabelNum] = Double.parseDouble(textField.getText());
+	    	valCount++;//vaildationCounter - how many fields are valid numbers
     		}
     		catch (Exception e) {
-    			valid = false;
     			labelErrors[errorLabelNum].setVisible(true);
     		}
     	}
@@ -181,13 +181,12 @@ public class FxController {
     	errorLabelNum++;
     	}//end of for loop
     	//if all textFields are valid - calculate
-    	System.out.println("valCount="+textCount + "  errorLabelNum= " + errorLabelNum);
-    	if (valid && (textCount == errorLabelNum)) {//if all three have text && are valid doubles (numbers) proceede
+    	System.out.println("textCount="+textCount + "/"+ errorLabelNum +"  valCount="+ valCount + "/"+ errorLabelNum  +"  totalFieldsChecked= " + errorLabelNum+ "/"+textFields.length);
+    	if (valCount == errorLabelNum) {//if all three have text && are valid doubles (numbers) proceed
     	result = calculation.performCalc(vars);
-    	displayResult(debtEquityRatio);
-    	System.out.println("Total Debt:"+ result + " Total Equity: "+ totalEquity + "\nDebt Equity Ratio: " + debtEquityRatio);
+    	displayResult(result);
     	}
-    	return	debtEquityRatio;
+    	return	result;
     }
     
     public double submitDebtGrossProfit() {

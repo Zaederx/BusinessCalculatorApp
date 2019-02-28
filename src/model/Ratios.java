@@ -10,8 +10,10 @@ public class Ratios extends Calculation {
 		
 	public static class CurrentRatio extends Ratios {
 		
-		public void performCalc(double d1, double d2) {
-			currentRatio(d1,d2);
+		public static double performCalc(double ...vars) {
+			double cA = vars[0];
+			double cL = vars[1];
+			return currentRatio(cA,cL);
 		}
 		/**
 		 * Method to find out currentRatio
@@ -21,7 +23,7 @@ public class Ratios extends Calculation {
 		 */
 	
 		
-		public double currentRatio(double currentAsset, double currentLiabilities) {
+		public static double currentRatio(double currentAsset, double currentLiabilities) {
 		double currentRatio = currentAsset / currentLiabilities;
 		return currentRatio;
 		}
