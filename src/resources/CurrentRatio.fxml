@@ -88,7 +88,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Asset:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Current Asset:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -98,7 +98,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <Label fx:id="labelErrorTotalDebt" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
+                        <Label fx:id="labelError1" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
                      </children>
                      <BorderPane.margin>
                         <Insets />
@@ -121,7 +121,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <Label fx:id="labelErrorTotalEquity" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
+                        <Label fx:id="labelError2" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">

@@ -88,17 +88,17 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Debt:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Current Asset:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldTotalDebt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldCurrentAsset" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <Label fx:id="labelErrorTotalDebt" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
+                        <Label fx:id="labelError1" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
                      </children>
                      <BorderPane.margin>
                         <Insets />
@@ -111,17 +111,17 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Liabilities:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Current Liabilities:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField fx:id="textFieldTotalEquity" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
+                        <TextField fx:id="textFieldCurrentLiabilities" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="122.0">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <Label fx:id="labelErrorTotalLiabilities" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
+                        <Label fx:id="labelError2" prefHeight="39.0" prefWidth="137.0" text="Please enter a decimal." textFill="#640000" visible="false" wrapText="true" />
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="138.0">
@@ -155,7 +155,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="subButtonDebtEquity" mnemonicParsing="false" onAction="#submitDebtEquityRatios" text="SUBMIT" />
+            <Button fx:id="subButtonCurrentRatio" mnemonicParsing="false" onAction="#submitCurrentRatio" text="SUBMIT" />
          </children></HBox>
    </bottom>
 </BorderPane>

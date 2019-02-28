@@ -1,30 +1,33 @@
 package model;
-/**
- * A class used to work out the present and future value
- * of a given amount over time.
- * @author zacharyishmael
- *
- */
 
-public class Value {
-
-
-	 /**
-	  * Present Value = Future Value/ (1+Interest_Rate)N
-	  */
+public class Value extends Calculation {
 	
-	public double workOutPv(double futureValue, double interestRate, double n) {
-	 double pv = futureValue/Math.pow((1+interestRate), n);
-	 return pv;
- }
- 
-	/**
-	 * Future Value = Amount Invested * (1+Interest_Rate)N
-	 */
-
-	public double workOutFv(double amountInvested, double interestRate, double n) {
-	double fv = amountInvested*Math.pow((1+interestRate), n);
-	return fv;
-}
-
+	public static class PresentValue extends Value{
+	
+		public static double performCalc(double d1, double d2, double n) {
+			return workOutPV(d1,d2,n);
+		}
+		/**
+		 * Present Value = Future Value/ (1+Interest_Rate)N
+		 */
+		public static double workOutPV(double futureValue, double interestRate, double n) {
+		 double pv = futureValue/Math.pow((1+interestRate), n);
+		 return pv;
+		}
+	}
+	
+	public static class FutureValue extends Value {
+		
+		public static double performCalc(double d1, double d2,double n) {
+			return workOutFV(d1,d2,n);
+		}
+		/**
+		 * Future Value = Amount Invested * (1+Interest_Rate)N
+		 */
+	
+		public static double workOutFV(double amountInvested, double interestRate, double n) {
+		double fv = amountInvested*Math.pow((1+interestRate), n);
+		return fv;
+		}
+	}
 }
