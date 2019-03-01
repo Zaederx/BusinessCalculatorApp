@@ -25,11 +25,6 @@
             </Separator>
             <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
-                  <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="fvImageView" onMouseClicked="#fvImageViewClicked">
-               <image>
                   <Image url="@iconmonstr-chart-6-64%20GREY.png" />
                </image>
             </ImageView>

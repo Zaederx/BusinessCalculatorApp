@@ -27,6 +27,10 @@ public class Values extends Calculation {
 		 return pv;
 		}
 		
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
 		@Override
 		public String getName() {
 			return name;
@@ -60,6 +64,10 @@ public class Values extends Calculation {
 		return fv;
 		}
 		
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
 		public String getName() {
 			return name;
 		}

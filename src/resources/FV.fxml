@@ -22,11 +22,6 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
-               <image>
-                  <Image url="@iconmonstr-flip-chart-7-64%20GREY.png" />
-               </image>
-            </ImageView>
             <ImageView fx:id="fvmageView">
                <image>
                   <Image url="@iconmonstr-chart-6-64-PURPLE.png" />
@@ -39,12 +34,6 @@
             </ImageView>
          </children></HBox>
    </top>
-   <left>
-      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <Separator prefHeight="5.0" prefWidth="98.0" />
-         </children></VBox>
-   </left>
    <opaqueInsets>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </opaqueInsets>
@@ -150,4 +139,17 @@
             <Button mnemonicParsing="false" onAction="#submitFV" text="SUBMIT" />
          </children></HBox>
    </bottom>
+   <left>
+      <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefHeight="5.0" prefWidth="98.0" />
+            <Label onMouseClicked="#pvImageViewClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Present Value" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #6b32a6;" text="Future Value" textAlignment="CENTER" textFill="#e3e3e3" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

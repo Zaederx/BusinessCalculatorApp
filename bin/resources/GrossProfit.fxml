@@ -155,7 +155,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: e6e2d3;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="subButtonGrossProfit" mnemonicParsing="false" onAction="#submitDebtGrossProfit" text="SUBMIT" />
+            <Button fx:id="subButtonGrossProfit" mnemonicParsing="false" onAction="#submitGrossProfit" text="SUBMIT" />
          </children></HBox>
    </bottom>
 </BorderPane>

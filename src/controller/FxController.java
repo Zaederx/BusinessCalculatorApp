@@ -185,7 +185,7 @@ public class FxController {
     	if (valCount == errorLabelNum) {//if all three have text && are valid doubles (numbers) proceed
     	result = calculation.performCalc(vars);
     	displayResult(result);
-    	System.out.println("Result="+result);
+    	System.out.println(calculation.getName()+"="+result);
     	}
     	return	result;
     }
@@ -230,18 +230,34 @@ public class FxController {
     	CalculatorApp.loadMain();
     }
     
+    /**
+     * Changes the view to CaptialWork
+     * @throws IOException
+     */
     public void workingCapitalClicked() throws IOException {
     	CalculatorApp.loadCapitalWork();
     }
     
+    /**
+     * Changes the view to Debt Equity
+     * @throws IOException
+     */
     public void debtEquityClicked() throws IOException {
     	CalculatorApp.loadDebtEquity();
     }
     
+    /**
+     * Changes the view to Current Ratio Clicked
+     * @throws IOException
+     */
     public void currentRatioClicked() throws IOException {
     	CalculatorApp.loadCurrentRatio();
     }
    
+    /**
+     * Changes the view to Gross Profit Clicked
+     * @throws IOException
+     */
     public void grossProfitClicked() throws IOException {
     	CalculatorApp.loadGrossProfit();
     }

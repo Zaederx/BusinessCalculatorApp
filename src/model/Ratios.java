@@ -93,15 +93,23 @@ public class Ratios extends Calculation {
 			double totalEquity = vars[1]; //currentLiabilities
 			return debtEquityRatio(totalDebt,totalEquity);
 		}
-	/**
-	 * Used to work out the Debt Equity given the following parameters.
-	 * @param totalDebt
-	 * @param totalEquity
-	 * @return double debtEquity - a solvency ratio (shows ability to meet long term obligations)
-	 */
-	public static double debtEquityRatio(double totalDebt, double totalEquity) {
-		double debtEquity = totalDebt/totalEquity;
-		return debtEquity;
+		/**
+		 * Used to work out the Debt Equity given the following parameters.
+		 * @param totalDebt
+		 * @param totalEquity
+		 * @return double debtEquity - a solvency ratio (shows ability to meet long term obligations)
+		 */
+		public static double debtEquityRatio(double totalDebt, double totalEquity) {
+			double debtEquity = totalDebt/totalEquity;
+			return debtEquity;
+			}
+		
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
+		public String getName () {
+			return name;
 		}
 	}
 	//*************************************************
@@ -112,21 +120,30 @@ public class Ratios extends Calculation {
 	 *
 	 */
 	public static class GrossProfitMarginRatio extends Ratios {
+		String name = "GrossProfitMarginRatio";
+		
 		@Override
 		public  double performCalc(double ...vars) {
 			double totalDebt = vars[0]; //currentAsset
 			double totalEquity = vars[1]; //currentLiabilities
 			return grossProfitMarginRatio(totalDebt,totalEquity);
 		}
-	/**
-	 * Used to work out the Gross Profit Margin
-	 * @param grossProfit - overall profit 
-	 * @param revenue - all income
-	 * @return double grossProfitMarginRatio - the 
-	 */
-	public static double grossProfitMarginRatio(double grossProfit, double revenue) {
-		double grossProfitMarginRatio = grossProfit / revenue;
-		return grossProfitMarginRatio;
+		/**
+		 * Used to work out the Gross Profit Margin
+		 * @param grossProfit - overall profit 
+		 * @param revenue - all income
+		 * @return double grossProfitMarginRatio - the 
+		 */
+		public static double grossProfitMarginRatio(double grossProfit, double revenue) {
+			double grossProfitMarginRatio = grossProfit / revenue;
+			return grossProfitMarginRatio;
+			}
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
+		public String getName () {
+			return name;
 		}
 	}
 }
