@@ -8,9 +8,13 @@ package model;
 
 public class Calculation {
 
+	String name = "Calculation";
 	
 	public double performCalc(double ...doubles) {
 		return 0.0;
 	}
 
+	public String getName () {
+		return name;
+	}
 }

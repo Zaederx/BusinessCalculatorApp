@@ -1,7 +1,7 @@
 package model;
 /**
  * This class will be used to provide the ratio business logic / formulas.
- * It contains methods that hide's [similiar to overriding] the top-most SuperClass's Method: Caclculation.performCalc().
+ * It contains methods that overrides the top-most SuperClass's Method: Caclculation.performCalc().
  * The classes nested inside of of Ratios contain their on specific implementation
  * of the performCalc method.
  *  business logic that wil be needed to run the 
@@ -12,12 +12,15 @@ package model;
  */
 public class Ratios extends Calculation {
 		
+		
 	public static class CurrentRatio extends Ratios {
 		
-		/**
+		String name = "CurrentRatio";
+		/**Overrides the Calculation performCalc(double ...doubles) method
 		 * @param vars - double [] vars = new double {currentAsset, currentLiabilties}
 		 * @return
 		 */
+		@Override //so that compiler alerts should the 
 		public double performCalc(double ...vars) {
 			double cA = vars[0]; //currentAsset
 			double cL = vars[1]; //currentLiabilities
@@ -33,15 +36,25 @@ public class Ratios extends Calculation {
 		double currentRatio = currentAsset / currentLiabilities;
 		return currentRatio;
 		}
+		
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
+		public String getName() {
+			return name;
+		}
 	}
 		//*************************************************
 		
 	public static class WorkingCapitalRatio extends Ratios {
+		String name = "WorkingCapitalRatio";
 		/**
 		 * Specific case of performCalc 
 		 * @param vars -double [] vars = new double {currentAsset, currentLiabilties}
 		 * @return
 		 */
+		@Override
 		public  double performCalc(double ...vars) {
 			double cA = vars[0]; //currentAsset
 			double cL = vars[1]; //currentLiabilities
@@ -57,16 +70,24 @@ public class Ratios extends Calculation {
 			double workingCapitalRatio = currentAsset - currentLiabilities;
 			return workingCapitalRatio;
 			}
+		/**Returns the name of the Calculation.
+		 * @return String - name of the calculation being performed
+		 * (specific calculation subclass name)
+		 */
+		public String getName() {
+			return name;
+		}
 		}
 	//*************************************************
 	
 	public static class DebtEquityRatio extends Ratios {
-		
+		String name = "DebtEquityRatio";
 		/**
 		 * A specific implementation of SuperClassperformCal
 		 * @param vars - double [] vars = new double {totalDebt, totalEquity}
 		 * @return
 		 */
+		@Override
 		public double performCalc(double ...vars) {
 			double totalDebt = vars[0]; //currentAsset
 			double totalEquity = vars[1]; //currentLiabilities
@@ -91,6 +112,7 @@ public class Ratios extends Calculation {
 	 *
 	 */
 	public static class GrossProfitMarginRatio extends Ratios {
+		@Override
 		public  double performCalc(double ...vars) {
 			double totalDebt = vars[0]; //currentAsset
 			double totalEquity = vars[1]; //currentLiabilities

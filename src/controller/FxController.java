@@ -124,7 +124,7 @@ public class FxController {
 	 * submit function applied to Debt Equity
 	 * @return
 	 */
-    public double submitDebtEquity () {
+    public double submitDebtEquityRatio () {
     	Calculation debtEquity = new DebtEquityRatio();
     	return submit(debtEquity, textField1,textField2);
     }
@@ -185,6 +185,7 @@ public class FxController {
     	if (valCount == errorLabelNum) {//if all three have text && are valid doubles (numbers) proceed
     	result = calculation.performCalc(vars);
     	displayResult(result);
+    	System.out.println("Result="+result);
     	}
     	return	result;
     }
