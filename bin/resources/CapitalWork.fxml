@@ -22,7 +22,7 @@
                   <Insets left="2.0" />
                </padding>
             </Separator>
-            <ImageView fx:id="pvImageView">
+            <ImageView fx:id="pvImageView" onMouseClicked="#pvImageViewClicked">
                <image>
                   <Image url="@iconmonstr-chart-6-64%20GREY.png" />
                </image>
@@ -74,12 +74,12 @@
                <children>
                   <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Total liabilities:">
+                        <Label>
                            <padding>
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Current Asset:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Current Asset:" wrappingWidth="187.4404296875">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -102,7 +102,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Liabilities">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Current Liabilities">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

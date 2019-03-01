@@ -38,13 +38,22 @@
       <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
-            <Label onMouseClicked="#currentRatioClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true" />
-            <Label onMouseClicked="#workingCapitalClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Work Captial Ratio" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#currentRatioClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Current Ratio" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label onMouseClicked="#workingCapitalClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Working Captial Ratio" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #6b32a6;" text="Debt Equity" textAlignment="CENTER" textFill="#e3e3e3" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label onMouseClicked="#grossProfitClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#grossProfitClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
          </children></VBox>
    </left>
    <opaqueInsets>
@@ -69,9 +78,9 @@
             </HBox>
             <HBox>
                <children>
-                  <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="224.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Total liabilities:">
+                        <Label>
                            <padding>
                               <Insets top="5.0" />
                            </padding>
@@ -99,7 +108,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Liabilities:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Total Liabilities:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

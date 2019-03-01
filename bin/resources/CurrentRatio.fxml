@@ -50,7 +50,10 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label onMouseClicked="#debtEquityClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#debtEquityClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Debt Equity" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label onMouseClicked="#grossProfitClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Gross Profit" textAlignment="CENTER" wrapText="true" />
          </children></VBox>
    </left>
@@ -76,7 +79,7 @@
             </HBox>
             <HBox>
                <children>
-                  <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="224.0" prefWidth="168.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label>
                            <padding>
@@ -106,7 +109,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Current Liabilities:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Current Liabilities:">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

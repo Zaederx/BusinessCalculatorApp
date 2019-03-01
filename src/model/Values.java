@@ -1,7 +1,24 @@
 package model;
 
+/**
+ * This class will be used to help provide the present and future value business logic / formulas.
+ * It contains classes with methods that override the top-most SuperClass's Method: Caclculation.performCalc().
+ * The classes nested inside of of Ratios contain their on specific implementation
+ * of the performCalc method.
+ * 
+ * This allows methods to accept many specific calculations under SuperClass of Calculation.
+ * <h5> see FxController.submit() </h5>
+ * @author zacharyishmael
+ *
+ */
 public class Values extends Calculation {
 	
+	/**
+	 * Subclass of Ratios.
+	 * Class to help perform Present Value calculation
+	 * @author zacharyishmael
+	 *
+	 */
 	public static class PresentValue extends Values{
 	
 		String name = "PresentValue";
@@ -37,6 +54,13 @@ public class Values extends Calculation {
 		}
 	}
 	
+	
+	/**
+	 * Subclass of Ratios.
+	 * Class to help perform Future Value calculation
+	 * @author zacharyishmael
+	 *
+	 */
 	public static class FutureValue extends Values {
 		
 		String name = "FutureValue";

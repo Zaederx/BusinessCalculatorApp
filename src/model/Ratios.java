@@ -1,10 +1,10 @@
 package model;
 /**
  * This class will be used to provide the ratio business logic / formulas.
- * It contains methods that overrides the top-most SuperClass's Method: Caclculation.performCalc().
+ * It contains classes with methods that override the top-most SuperClass's Method: Caclculation.performCalc().
  * The classes nested inside of of Ratios contain their on specific implementation
  * of the performCalc method.
- *  business logic that wil be needed to run the 
+ * 
  * This allows methods to accept many specific calculations under SuperClass of Calculation.
  * <h5> see FxController.submit() </h5>
  * @author zacharyishmael
@@ -12,7 +12,11 @@ package model;
  */
 public class Ratios extends Calculation {
 		
-		
+	/**Subclass of Ratios.
+	 * Class to help perform Cuurent Ratio calculation
+	 * @author zacharyishmael
+	 *
+	 */
 	public static class CurrentRatio extends Ratios {
 		
 		String name = "CurrentRatio";
@@ -47,6 +51,12 @@ public class Ratios extends Calculation {
 	}
 		//*************************************************
 		
+	/**
+	 * Subclass of Ratios.
+	 * Class to help perform Working Capital Ratio calculation
+	 * @author zacharyishmael
+	 *
+	 */
 	public static class WorkingCapitalRatio extends Ratios {
 		String name = "WorkingCapitalRatio";
 		/**
@@ -80,6 +90,12 @@ public class Ratios extends Calculation {
 		}
 	//*************************************************
 	
+	/**
+	 * Subclass of Ratios.
+	 * Class to help perform Debt Equity Ratio calculation
+	 * @author zacharyishmael
+	 *
+	 */
 	public static class DebtEquityRatio extends Ratios {
 		String name = "DebtEquityRatio";
 		/**
@@ -115,7 +131,7 @@ public class Ratios extends Calculation {
 	//*************************************************
 	/**
 	 * Subclass of Ratios.
-	 * Provides specific implementation of performCalc that hides [i.e. similar to overrides] performCalc()
+	 * Class to help perform Gross Profit Margin calculation
 	 * @author zacharyishmael
 	 *
 	 */

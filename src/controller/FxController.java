@@ -5,14 +5,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
+
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import model.Ratios;
+
 import model.Ratios.CurrentRatio;
 import model.Ratios.DebtEquityRatio;
 import model.Ratios.GrossProfitMarginRatio;
@@ -149,7 +148,7 @@ public class FxController {
      */
     public double submit(Calculation calculation , TextField ...textFields) {
     	double result = 0.0;
-    	boolean valid = true;
+//    	boolean valid = true;
     	int errorLabelNum = 0;
     	double [] vars = new double [textFields.length];
     	int textCount = 0; 

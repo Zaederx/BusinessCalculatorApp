@@ -149,7 +149,10 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label onMouseClicked="#fvImageViewClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Future Value" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#fvImageViewClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Future Value" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
          </children>
       </VBox>
    </left>

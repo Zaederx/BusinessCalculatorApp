@@ -56,7 +56,7 @@
             </HBox>
             <HBox>
                <children>
-                  <VBox prefHeight="274.0" prefWidth="138.0" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="224.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                      <children>
                         <Label text="Present Value">
                            <padding>
@@ -79,7 +79,7 @@
                         <Insets />
                      </BorderPane.margin>
                   </VBox>
-                  <VBox prefHeight="274.0" prefWidth="138.0">
+                  <VBox prefHeight="224.0" prefWidth="177.0">
                      <children>
                         <Label>
                            <padding>
@@ -143,7 +143,10 @@
       <VBox fx:id="hboxLeft" alignment="TOP_CENTER" prefHeight="274.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Separator prefHeight="5.0" prefWidth="98.0" />
-            <Label onMouseClicked="#pvImageViewClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Present Value" textAlignment="CENTER" wrapText="true" />
+            <Label onMouseClicked="#pvImageViewClicked" prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #e6e2d3;" text="Present Value" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             <Label prefHeight="55.0" prefWidth="74.0" style="-fx-background-color: #6b32a6;" text="Future Value" textAlignment="CENTER" textFill="#e3e3e3" wrapText="true">
                <font>
                   <Font size="14.0" />
